@@ -3262,3 +3262,25 @@ body.theme-dark .stack-icon-list .stack-item i:not(.colored) { color:#e8e2ee; }
 @media (max-width:980px) {
   .stack-icon-list .stack-column { min-height:0;height:auto; }
 }
+
+
+/* Carte de visite — marges intérieures plus généreuses */
+.business-card .business-face {
+  padding: 28px 30px !important;
+  box-sizing: border-box;
+}
+.business-card .business-front > img {
+  margin-bottom: 17px;
+}
+.business-card .business-front .business-links {
+  gap: 13px;
+  margin-top: 17px;
+}
+.business-card .business-front .card-flip {
+  margin-top: 22px;
+}
+@media (max-width: 760px) {
+  .business-card .business-face {
+    padding: 25px 24px !important;
+  }
+}
