@@ -22,8 +22,8 @@
     menuButton?.setAttribute("aria-expanded", "false");
   }));
 
-  const slides = $("[data-project-slide]");
-  const filters = $("[data-project-filter]");
+  const slides = $$("[data-project-slide]");
+  const filters = $$("[data-project-filter]");
   let current = 0;
   let activeFilter = "all";
   const visibleSlides = () => slides.filter(slide => activeFilter === "all" || slide.dataset.category === activeFilter);
