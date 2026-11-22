@@ -34,6 +34,7 @@
     slides.forEach(slide => {
       const isVisible = visible.includes(slide);
       slide.hidden = !isVisible;
+      slide.style.display = isVisible ? "" : "none";
       slide.classList.toggle("is-active", isVisible && visible.indexOf(slide) === current);
     });
     const counter = $("#projectCounter");
