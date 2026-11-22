@@ -3145,3 +3145,95 @@ body.theme-dark .brand img {
     font-size: .60rem !important;
   }
 }
+
+
+/* =========================================================
+   CORRECTIONS — raccord HTML / CSS du portfolio
+   ========================================================= */
+
+/* Navigation : le HTML utilise main-nav */
+.main-nav { justify-self:center; display:flex; align-items:center; gap:12px; }
+.main-nav a { padding:8px 11px; border-radius:9px; color:var(--muted); font-size:.83rem; font-weight:700; text-decoration:none; }
+.main-nav a:hover, .main-nav a.is-active { background:var(--soft); color:var(--text); }
+.header-tools { align-items:center; }
+.header-contact { white-space:nowrap; }
+
+/* Hero et lien Malt */
+.hero-copy { min-width:0; }
+.hero-single-identity { margin-bottom:12px; }
+.hero-cta-with-malt { gap:12px; }
+.malt-profile-badge {
+  display:inline-flex; align-items:center; gap:10px; min-height:52px; padding:8px 12px;
+  border:1px solid var(--line); border-radius:13px; background:var(--surface);
+  color:var(--text); text-decoration:none; box-shadow:0 8px 22px rgba(42,28,58,.045);
+  transition:transform .18s ease,border-color .18s ease;
+}
+.malt-profile-badge:hover { transform:translateY(-2px); border-color:var(--purple); }
+.malt-profile-mark { width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:#fcf0e6;color:#e66a27;font-weight:900; }
+.malt-profile-copy { display:grid; gap:3px; }
+.malt-profile-copy strong { font-size:.7rem; }
+.malt-profile-copy small { color:var(--muted);font-size:.61rem; }
+.malt-profile-arrow { color:var(--purple);font-weight:800; }
+
+/* Projets : visuel, tags, liens et commandes */
+.project-slide-visual img { width:100%;height:100%;display:block;object-fit:cover; }
+.project-slide-visual { overflow:hidden; min-width:0; border:1px solid var(--line); border-radius:22px; background:var(--surface); }
+.project-slide-visual > img { aspect-ratio:16/10; }
+.project-slide-content { min-width:0; }
+.project-slide-content .section-kicker { margin-bottom:12px; }
+.project-slide-content h3 { margin:0 0 14px; color:var(--text);font:800 clamp(1.9rem,3.7vw,3.2rem)/1.02 "Manrope",sans-serif;letter-spacing:-.04em; }
+.project-slide-content > p:not(.section-kicker):not(.project-tags) { color:var(--muted);line-height:1.7; }
+.project-tags { display:flex;flex-wrap:wrap;gap:7px;margin:18px 0;color:var(--purple);font:700 .68rem/1.5 var(--mono); }
+.text-link { display:inline-flex;align-items:center;gap:8px;margin-top:5px;color:var(--purple);font-weight:800;text-decoration:none; }
+.text-link:hover { text-decoration:underline; }
+.project-slider-controls { display:flex;align-items:center;justify-content:center;gap:18px;margin-top:18px; }
+.project-slider-controls button { width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--purple);font-size:1.1rem;cursor:pointer;transition:background .18s ease,transform .18s ease; }
+.project-slider-controls button:hover { background:var(--purple-soft);transform:translateY(-1px); }
+#projectCounter { min-width:62px;text-align:center;color:var(--muted);font:800 .7rem/1 var(--mono); }
+
+/* Technologies */
+.stack-grid { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:28px; }
+.stack-column { min-width:0;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--surface); }
+.stack-column h3 { margin:0 0 12px;color:var(--text);font:800 .88rem/1.3 "Manrope",sans-serif; }
+.stack-column p { margin:0;color:var(--muted);font-size:.82rem;line-height:1.75; }
+
+/* Carte de visite retournable */
+.business-card { min-height:260px; }
+.business-card-inner { position:relative;width:100%;min-height:260px;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.22,.8,.25,1); }
+.business-card.is-flipped .business-card-inner { transform:rotateY(180deg); }
+.business-face { display:flex;flex-direction:column;align-items:flex-start;justify-content:center; }
+.business-front > img { width:150px;max-height:75px;object-fit:contain;object-position:left center;margin-bottom:14px; }
+.business-front > p { margin:0;color:var(--text);font:800 1rem/1.3 "Manrope",sans-serif; }
+.business-front .business-links { display:grid;gap:9px;margin-top:14px; }
+.business-front .business-links a { display:flex;align-items:center;gap:9px;color:var(--muted);font-size:.76rem;font-weight:700;text-decoration:none; }
+.business-front .business-links i { width:16px;color:var(--purple); }
+.business-front .card-flip { margin-top:18px; }
+.business-back { align-items:center;text-align:center; }
+
+/* Petits écrans */
+@media (max-width:980px) {
+  .main-nav { gap:4px; }
+  .main-nav a { padding-inline:8px; }
+  .stack-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:760px) {
+  .header-row { grid-template-columns:auto 1fr auto;gap:10px; }
+  .main-nav { display:none; }
+  .header-contact { display:none; }
+  .menu-toggle { display:grid; }
+  .mobile-nav.is-open { display:flex;flex-direction:column;gap:4px;padding:10px 24px 16px;border-top:1px solid var(--line);background:var(--bg); }
+  .mobile-nav a { padding:10px 12px;border-radius:9px;color:var(--muted);font-weight:700;text-decoration:none; }
+  .mobile-nav a:hover { background:var(--soft);color:var(--text); }
+  .hero { padding:42px 0 50px; }
+  .hero-cta-with-malt { align-items:stretch; }
+  .malt-profile-badge { flex:1 1 100%; }
+  .stack-grid { grid-template-columns:1fr 1fr;gap:10px; }
+  .stack-column { padding:15px; }
+  .project-slide { grid-template-columns:1fr;gap:20px;min-height:0;padding:24px 0; }
+  .project-slide-visual > img { aspect-ratio:16/9; }
+  .business-card { justify-self:stretch;width:100%; }
+}
+@media (max-width:480px) {
+  .stack-grid { grid-template-columns:1fr; }
+  .project-slider-controls { margin-top:12px; }
+}
