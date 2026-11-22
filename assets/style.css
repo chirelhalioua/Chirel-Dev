@@ -389,3 +389,18 @@ body.theme-dark .method-orbit-line{border-color:color-mix(in srgb,var(--purple) 
 .project-slide[data-project-slide="3"] .project-slide-visual > img {
   object-fit: contain !important;
 }
+
+
+/* Détails des étapes dans une fenêtre modale */
+.method-modal[hidden]{display:none!important}
+.method-modal{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:22px}
+.method-modal-backdrop{position:absolute;inset:0;background:rgba(24,19,30,.56);backdrop-filter:blur(5px)}
+.method-modal-panel{position:relative;z-index:1;width:min(100%,480px);padding:42px 34px 36px;border:1px solid var(--line);border-radius:22px;background:var(--surface);box-shadow:0 24px 80px rgba(20,12,28,.24);text-align:center;animation:methodModalIn .22s ease}
+.method-modal-panel h3{margin:0 0 12px;color:var(--text);font:800 clamp(1.45rem,4vw,1.9rem)/1.2 "Manrope",sans-serif}
+.method-modal-panel>p:last-child{max-width:390px;margin:0 auto;color:var(--muted);font-size:1rem;line-height:1.7}
+.method-modal-close{position:absolute;top:12px;right:14px;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:var(--bg);color:var(--text);font-size:1.5rem;line-height:1;cursor:pointer}
+.method-modal-close:hover{border-color:var(--purple);color:var(--purple)}
+body.method-modal-open{overflow:hidden}
+@keyframes methodModalIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+@media(max-width:600px){.method-modal{padding:18px}.method-modal-panel{padding:40px 22px 28px;border-radius:18px}.method-modal-panel>p:last-child{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){.method-modal-panel{animation:none}}
