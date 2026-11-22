@@ -211,3 +211,16 @@
 .case-study-content strong{color:var(--text)}
 @keyframes caseStudyIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @media(max-width:600px){.project-case-study{margin-top:13px}.case-study-content{font-size:.78rem}}
+
+
+/* Parcours professionnel */
+.journey-section{padding:70px 0;background:var(--bg)}
+.journey-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.journey-item{position:relative;display:flex;gap:15px;min-height:210px;padding:23px 20px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow)}
+.journey-index{flex:0 0 auto;color:var(--purple);font:800 .72rem/1.4 var(--mono)}
+.journey-content{min-width:0}
+.journey-label{margin:0 0 10px;color:var(--purple);font:800 .66rem/1.4 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.journey-content h3{margin:0 0 11px;color:var(--text);font:800 1.05rem/1.25 "Manrope",sans-serif;letter-spacing:-.02em}
+.journey-content>p:last-child{margin:0;color:var(--muted);font-size:.86rem;line-height:1.65}
+@media(max-width:900px){.journey-list{grid-template-columns:1fr}.journey-item{min-height:0}}
+@media(max-width:600px){.journey-section{padding:46px 0}.journey-item{padding:19px 16px;border-radius:15px}.journey-content h3{font-size:1rem}.journey-content>p:last-child{font-size:.82rem}}
