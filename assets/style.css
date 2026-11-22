@@ -3637,3 +3637,72 @@ img, video, iframe { max-width:100%; }
   }
 }
 
+/* CTA mobile — alignement propre dans le hero et la section contact */
+@media (max-width: 760px) {
+  .hero-cta,
+  .hero-cta-with-malt {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+  .hero-cta > .primary-button,
+  .hero-cta > .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    text-align: center;
+    white-space: normal;
+    font-size: .78rem;
+    line-height: 1.3;
+  }
+  .hero-cta > .malt-profile-badge {
+    grid-column: 1 / -1;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 58px;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .contact-actions {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+  .contact-actions > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    box-sizing: border-box;
+    padding: 11px 14px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-cta,
+  .hero-cta-with-malt {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .hero-cta > .malt-profile-badge {
+    grid-column: auto;
+  }
+}
+
