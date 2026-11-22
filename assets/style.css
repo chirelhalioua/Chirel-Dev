@@ -3349,3 +3349,70 @@ body.theme-dark .stack-icon-list .stack-item i:not(.colored) { color:#e8e2ee; }
   transform:rotate(45deg);
   background:var(--soft);
 }
+
+
+/* Encadré éditorial — philosophie de travail */
+.about-v13-vision {
+  position:relative;
+  max-width:780px;
+  margin:34px auto 0;
+  padding:27px 34px 29px 38px;
+  text-align:left;
+  border:1px solid color-mix(in srgb, var(--purple) 18%, var(--line));
+  border-left:3px solid var(--purple);
+  border-radius:4px 18px 18px 4px;
+  background:
+    radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--purple) 9%, transparent), transparent 58%),
+    color-mix(in srgb, var(--surface) 94%, var(--bg));
+  box-shadow:0 14px 34px rgba(42,28,58,.045);
+}
+.about-v13-vision::before {
+  content:"“";
+  position:absolute;
+  top:8px;
+  right:23px;
+  color:color-mix(in srgb, var(--purple) 20%, transparent);
+  font:800 4.5rem/.9 Georgia,serif;
+  pointer-events:none;
+}
+.about-v13-vision .vision-label {
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin:0 0 12px;
+  color:var(--purple);
+  font:800 .68rem/1.2 var(--mono);
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.about-v13-vision .vision-label::before {
+  content:"";
+  width:22px;
+  height:2px;
+  border-radius:2px;
+  background:var(--purple);
+}
+.about-v13-vision p {
+  max-width:670px;
+  margin:0;
+  color:var(--text);
+  font:600 clamp(1.08rem,2vw,1.32rem)/1.65 "Manrope",sans-serif;
+  letter-spacing:-.018em;
+}
+.about-v13-vision p strong {
+  color:var(--purple);
+  font-weight:800;
+}
+body.theme-dark .about-v13-vision {
+  background:linear-gradient(115deg,rgba(170,114,186,.12),rgba(24,25,34,.94));
+  border-color:rgba(223,167,234,.25);
+  border-left-color:#dfa7ea;
+}
+body.theme-dark .about-v13-vision .vision-label,
+body.theme-dark .about-v13-vision p strong { color:#dfa7ea; }
+body.theme-dark .about-v13-vision .vision-label::before { background:#dfa7ea; }
+@media(max-width:760px) {
+  .about-v13-vision { margin-top:26px;padding:22px 22px 24px 25px; }
+  .about-v13-vision::before { top:7px;right:15px;font-size:3.5rem; }
+  .about-v13-vision p { font-size:1.04rem;line-height:1.6; }
+}
