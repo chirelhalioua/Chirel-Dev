@@ -43,7 +43,7 @@
     methodDetail.innerHTML = `<p class="method-detail-index">ÉTAPE ${String(index + 1).padStart(2, "0")}</p><h3>${item[0]}</h3><p>${item[1]}</p>`;
   }));
 
-  const slides = $("[data-project-slide]");
+  const slides = $$("[data-project-slide]");
   const filters = $$("[data-project-filter]");
   let current = 0;
   let activeFilter = "all";
