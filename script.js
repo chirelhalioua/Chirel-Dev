@@ -4,11 +4,11 @@
 
   const themeButton = $("#themeToggle");
   const savedTheme = localStorage.getItem("chirel-theme");
-  if (savedTheme === "dark") document.body.classList.add("dark-mode");
+  if (savedTheme === "dark") document.body.classList.add("theme-dark");
   themeButton?.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("chirel-theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
-    themeButton.setAttribute("aria-label", document.body.classList.contains("dark-mode") ? "Activer le mode clair" : "Activer le mode sombre");
+    document.body.classList.toggle("theme-dark");
+    localStorage.setItem("chirel-theme", document.body.classList.contains("theme-dark") ? "dark" : "light");
+    themeButton.setAttribute("aria-label", document.body.classList.contains("theme-dark") ? "Activer le mode clair" : "Activer le mode sombre");
   });
 
   const menuButton = $("#menuToggle");
