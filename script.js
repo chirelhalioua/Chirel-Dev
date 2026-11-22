@@ -51,6 +51,7 @@
       point.classList.toggle("is-active", active);
       point.setAttribute("aria-pressed", String(active));
     });
+    if (!methodModalIndex || !methodModalTitle || !methodModalText) return;
     methodModalIndex.textContent = `ÉTAPE ${String(index + 1).padStart(2, "0")}`;
     methodModalTitle.textContent = item[0];
     methodModalText.textContent = item[1];
