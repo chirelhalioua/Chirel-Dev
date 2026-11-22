@@ -3457,3 +3457,17 @@ body.theme-dark .project-filter.is-active { background:var(--purple);color:#fff;
 .cbyc-project-mark{font-family:Georgia,serif;font-size:clamp(3.5rem,8vw,6rem);letter-spacing:.04em;line-height:1;}
 .cbyc-project-mark span{font-size:.42em;font-style:italic;letter-spacing:0;}
 .cbyc-project-visual p{margin:1rem 0 0;font-family:Georgia,serif;font-size:.9rem;letter-spacing:.18em;text-transform:uppercase;}
+
+
+/* Liens des projets : boutons cohérents et responsives */
+.project-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px}
+.project-action{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:0 17px;border-radius:999px;text-decoration:none;font:700 .78rem/1 "Manrope",sans-serif;letter-spacing:.01em;transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease}
+.project-action:hover{transform:translateY(-2px)}
+.project-action-primary{background:var(--purple);border:1px solid var(--purple);color:#fff;box-shadow:0 7px 18px rgba(90,65,110,.16)}
+.project-action-primary:hover{box-shadow:0 10px 24px rgba(90,65,110,.24);filter:brightness(1.06)}
+.project-action-secondary{background:transparent;border:1px solid var(--line);color:var(--text)}
+.project-action-secondary:hover{border-color:var(--purple);color:var(--purple);background:var(--surface)}
+.project-action-note{font:500 .72rem/1.4 "Manrope",sans-serif;color:var(--muted)}
+body.theme-dark .project-action-secondary{color:var(--text);border-color:var(--line)}
+body.theme-dark .project-action-secondary:hover{background:var(--surface);color:var(--purple)}
+@media(max-width:560px){.project-actions{gap:8px}.project-action{min-height:40px;padding:0 14px;font-size:.74rem}}
