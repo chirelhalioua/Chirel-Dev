@@ -3706,3 +3706,17 @@ img, video, iframe { max-width:100%; }
   }
 }
 
+
+
+/* Centrage des filtres de projets sur mobile */
+@media (max-width: 760px) {
+  .project-filters {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
