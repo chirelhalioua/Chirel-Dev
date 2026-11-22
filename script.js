@@ -31,6 +31,17 @@
   ];
   const methodButtons = $$("[data-method]");
   const methodDetail = $("#methodDetail");
+  const methodModalIndex = $("#methodModalIndex");
+  const methodModalTitle = $("#methodModalTitle");
+  const methodModalText = $("#methodModalText");
+  const methodCloseButtons = $("[data-method-close]");
+  let lastMethodTrigger = null;
+  const closeMethodModal = () => {
+    if (!methodDetail) return;
+    methodDetail.hidden = true;
+    document.body.classList.remove("method-modal-open");
+    lastMethodTrigger?.focus();
+  };
   methodButtons.forEach(button => button.addEventListener("click", () => {
     const index = Number(button.dataset.method);
     const item = methodContent[index];
@@ -40,8 +51,18 @@
       point.classList.toggle("is-active", active);
       point.setAttribute("aria-pressed", String(active));
     });
-    methodDetail.innerHTML = `<p class="method-detail-index">ÉTAPE ${String(index + 1).padStart(2, "0")}</p><h3>${item[0]}</h3><p>${item[1]}</p>`;
+    methodModalIndex.textContent = `ÉTAPE ${String(index + 1).padStart(2, "0")}`;
+    methodModalTitle.textContent = item[0];
+    methodModalText.textContent = item[1];
+    lastMethodTrigger = button;
+    methodDetail.hidden = false;
+    document.body.classList.add("method-modal-open");
+    methodDetail.querySelector(".method-modal-close")?.focus();
   }));
+  methodCloseButtons.forEach(button => button.addEventListener("click", closeMethodModal));
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && methodDetail && !methodDetail.hidden) closeMethodModal();
+  });
 
   const slides = $$("[data-project-slide]");
   const filters = $$("[data-project-filter]");
