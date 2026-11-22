@@ -3284,3 +3284,26 @@ body.theme-dark .stack-icon-list .stack-item i:not(.colored) { color:#e8e2ee; }
     padding: 25px 24px !important;
   }
 }
+
+
+/* Correctif débordement : le padding reste compris dans la carte */
+.business-card,
+.business-card-inner,
+.business-card .business-face {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+.business-card .business-face {
+  width: 100%;
+  overflow: hidden;
+}
+.business-card .business-front .business-links,
+.business-card .business-front .business-links a {
+  min-width: 0;
+  max-width: 100%;
+}
+.business-card .business-front .business-links a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
