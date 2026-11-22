@@ -241,3 +241,88 @@
  .journey-index{left:-43px;top:19px;width:32px;height:32px;font-size:.64rem}
  .journey-content h3{font-size:1rem}
 }
+
+
+/* Parcours — frise chronologique croisée */
+.journey-list{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  max-width:1000px;
+  margin:38px auto 0;
+  padding:0;
+}
+.journey-list::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:10px;
+  bottom:10px;
+  width:2px;
+  transform:translateX(-50%);
+  background:linear-gradient(to bottom,transparent,var(--purple) 5%,var(--line) 95%,transparent);
+}
+.journey-item{
+  position:relative;
+  display:block;
+  width:calc(50% - 42px);
+  min-height:0;
+  margin:0;
+  padding:45px 25px 24px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:var(--surface);
+  box-shadow:var(--shadow);
+}
+.journey-item:nth-child(odd){align-self:flex-start}
+.journey-item:nth-child(even){align-self:flex-end}
+.journey-item::after{
+  content:"";
+  position:absolute;
+  top:28px;
+  width:13px;
+  height:13px;
+  border:3px solid var(--purple);
+  border-radius:50%;
+  background:var(--bg);
+  box-shadow:0 0 0 5px var(--surface);
+}
+.journey-item:nth-child(odd)::after{right:-51px}
+.journey-item:nth-child(even)::after{left:-51px}
+.journey-index{
+  position:absolute;
+  top:13px;
+  left:22px;
+  display:inline-flex;
+  align-items:center;
+  width:auto;
+  height:auto;
+  padding:5px 10px;
+  border:1px solid var(--purple);
+  border-radius:999px;
+  background:var(--bg);
+  color:var(--purple);
+  font:800 .65rem/1.35 var(--mono);
+  letter-spacing:.02em;
+}
+.journey-content h3{margin:0 0 10px;font-size:1.08rem}
+.journey-content>p:last-child{margin:0;max-width:none}
+@media(max-width:700px){
+  .journey-list{gap:18px;margin-top:28px;padding-left:31px}
+  .journey-list::before{left:8px;transform:none}
+  .journey-item,.journey-item:nth-child(odd),.journey-item:nth-child(even){
+    align-self:stretch;
+    width:100%;
+    padding:44px 17px 19px;
+  }
+  .journey-item::after,.journey-item:nth-child(odd)::after,.journey-item:nth-child(even)::after{
+    left:-29px;
+    right:auto;
+    top:24px;
+    width:11px;
+    height:11px;
+  }
+  .journey-index{left:16px;top:12px;font-size:.6rem}
+  .journey-content h3{font-size:1rem}
+}
