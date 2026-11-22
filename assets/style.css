@@ -198,3 +198,16 @@
 
 /* Logo légèrement plus discret sur ordinateur */
 @media (min-width: 761px){.site-header .brand img{width:120px !important;max-width:120px !important;}}
+
+
+/* Études de cas — détails dépliables dans les projets */
+.project-case-study{margin-top:16px;border-top:1px solid var(--line);padding-top:12px;color:var(--text)}
+.project-case-study summary{display:flex;align-items:center;gap:9px;width:fit-content;cursor:pointer;list-style:none;color:var(--purple);font-size:.78rem;font-weight:800}
+.project-case-study summary::-webkit-details-marker{display:none}
+.project-case-study summary::after{content:"+";display:inline-grid;place-items:center;width:21px;height:21px;border:1px solid var(--line);border-radius:50%;font-size:1rem;line-height:1;transition:transform .2s ease}
+.project-case-study[open] summary::after{content:"−"}
+.case-study-content{padding:12px 0 2px;color:var(--muted);font-size:.82rem;line-height:1.65;animation:caseStudyIn .2s ease}
+.case-study-content p{margin:0 0 9px}
+.case-study-content strong{color:var(--text)}
+@keyframes caseStudyIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media(max-width:600px){.project-case-study{margin-top:13px}.case-study-content{font-size:.78rem}}
