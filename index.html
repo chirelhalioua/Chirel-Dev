@@ -86,10 +86,16 @@
             <button class="method-point" type="button" data-method="3" aria-pressed="false" aria-controls="methodDetail"><span class="method-number">04</span><span>Améliorer</span></button>
             <div class="method-center" aria-hidden="true"><span>CHIREL</span><strong>DEV</strong><i>✳</i></div>
           </div>
-          <div class="method-detail" id="methodDetail" aria-live="polite">
-            <p class="method-detail-index">ÉTAPE 01</p><h3>Comprendre</h3>
-            <p>Échanger, écouter et analyser le besoin pour définir clairement les objectifs et les attentes du projet.</p>
-          </div>
+        </div>
+        <div class="method-modal" id="methodDetail" hidden>
+          <div class="method-modal-backdrop" data-method-close></div>
+          <section class="method-modal-panel" role="dialog" aria-modal="true" aria-labelledby="methodModalTitle" aria-describedby="methodModalText">
+            <button class="method-modal-close" type="button" data-method-close aria-label="Fermer">×</button>
+            <p class="method-detail-index" id="methodModalIndex">ÉTAPE 01</p>
+            <h3 id="methodModalTitle">Comprendre</h3>
+            <p id="methodModalText">Échanger, écouter et analyser le besoin pour définir clairement les objectifs et les attentes du projet.</p>
+          </section>
+        </div>
         </div>
       </div>
     </section>
