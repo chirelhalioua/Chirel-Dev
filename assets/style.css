@@ -3416,3 +3416,37 @@ body.theme-dark .about-v13-vision .vision-label::before { background:#dfa7ea; }
   .about-v13-vision::before { top:7px;right:15px;font-size:3.5rem; }
   .about-v13-vision p { font-size:1.04rem;line-height:1.6; }
 }
+
+
+/* Filtres de projets */
+.project-filters {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin:26px 0 8px;
+}
+.project-filter {
+  padding:9px 16px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--surface);
+  color:var(--muted);
+  font:700 .75rem/1.2 "Manrope",sans-serif;
+  cursor:pointer;
+  transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.project-filter:hover { transform:translateY(-1px);border-color:var(--purple);color:var(--purple); }
+.project-filter.is-active {
+  border-color:var(--purple);
+  background:var(--purple);
+  color:#fff;
+}
+.project-slide[hidden] { display:none !important; }
+body.theme-dark .project-filter { background:var(--surface);color:var(--muted); }
+body.theme-dark .project-filter.is-active { background:var(--purple);color:#fff;border-color:var(--purple); }
+@media(max-width:480px) {
+  .project-filters { justify-content:flex-start;gap:7px;margin-top:20px; }
+  .project-filter { padding:8px 12px;font-size:.7rem; }
+}
