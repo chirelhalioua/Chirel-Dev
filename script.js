@@ -29,7 +29,7 @@
     ["Développer","Donner vie au projet en construisant ses fonctionnalités avec les technologies les plus adaptées."],
     ["Améliorer","Tester, ajuster et optimiser l’expérience pour obtenir un résultat fiable, fluide et agréable à utiliser."]
   ];
-  const methodButtons = $("[data-method]");
+  const methodButtons = $$("[data-method]");
   const methodDetail = $("#methodDetail");
   methodButtons.forEach(button => button.addEventListener("click", () => {
     const index = Number(button.dataset.method);
