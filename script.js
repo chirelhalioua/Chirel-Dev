@@ -22,7 +22,28 @@
     menuButton?.setAttribute("aria-expanded", "false");
   }));
 
-  const slides = $$("[data-project-slide]");
+
+  const methodContent = [
+    ["Comprendre","Échanger, écouter et analyser le besoin pour définir clairement les objectifs et les attentes du projet."],
+    ["Concevoir","Imaginer une réponse adaptée, structurer les fonctionnalités et réfléchir à une interface claire et intuitive."],
+    ["Développer","Donner vie au projet en construisant ses fonctionnalités avec les technologies les plus adaptées."],
+    ["Améliorer","Tester, ajuster et optimiser l’expérience pour obtenir un résultat fiable, fluide et agréable à utiliser."]
+  ];
+  const methodButtons = $("[data-method]");
+  const methodDetail = $("#methodDetail");
+  methodButtons.forEach(button => button.addEventListener("click", () => {
+    const index = Number(button.dataset.method);
+    const item = methodContent[index];
+    if (!item || !methodDetail) return;
+    methodButtons.forEach(point => {
+      const active = point === button;
+      point.classList.toggle("is-active", active);
+      point.setAttribute("aria-pressed", String(active));
+    });
+    methodDetail.innerHTML = `<p class="method-detail-index">ÉTAPE ${String(index + 1).padStart(2, "0")}</p><h3>${item[0]}</h3><p>${item[1]}</p>`;
+  }));
+
+  const slides = $("[data-project-slide]");
   const filters = $$("[data-project-filter]");
   let current = 0;
   let activeFilter = "all";
