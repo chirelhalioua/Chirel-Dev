@@ -22,17 +22,35 @@
     menuButton?.setAttribute("aria-expanded", "false");
   }));
 
-  const slides = $$("[data-project-slide]");
+  const slides = $("[data-project-slide]");
+  const filters = $("[data-project-filter]");
   let current = 0;
+  let activeFilter = "all";
+  const visibleSlides = () => slides.filter(slide => activeFilter === "all" || slide.dataset.category === activeFilter);
   const showSlide = index => {
-    if (!slides.length) return;
-    current = (index + slides.length) % slides.length;
-    slides.forEach((slide, i) => slide.classList.toggle("is-active", i === current));
+    const visible = visibleSlides();
+    if (!visible.length) return;
+    current = (index + visible.length) % visible.length;
+    slides.forEach(slide => {
+      const isVisible = visible.includes(slide);
+      slide.hidden = !isVisible;
+      slide.classList.toggle("is-active", isVisible && visible.indexOf(slide) === current);
+    });
     const counter = $("#projectCounter");
-    if (counter) counter.textContent = `${String(current + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+    if (counter) counter.textContent = `${String(current + 1).padStart(2, "0")} / ${String(visible.length).padStart(2, "0")}`;
   };
+  filters.forEach(button => button.addEventListener("click", () => {
+    activeFilter = button.dataset.projectFilter || "all";
+    filters.forEach(filter => {
+      const selected = filter === button;
+      filter.classList.toggle("is-active", selected);
+      filter.setAttribute("aria-pressed", String(selected));
+    });
+    showSlide(0);
+  }));
   $("#projectPrev")?.addEventListener("click", () => showSlide(current - 1));
   $("#projectNext")?.addEventListener("click", () => showSlide(current + 1));
+  showSlide(0);
 
   $$("[data-card-flip]").forEach(button => button.addEventListener("click", () => $("#businessCard")?.classList.toggle("is-flipped")));
 
