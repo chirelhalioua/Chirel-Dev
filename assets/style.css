@@ -3237,3 +3237,18 @@ body.theme-dark .brand img {
   .stack-grid { grid-template-columns:1fr; }
   .project-slider-controls { margin-top:12px; }
 }
+
+
+/* Technologies — liste avec icônes */
+.stack-icon-list { display:grid;grid-template-columns:1.15fr 1fr .8fr 1.05fr;gap:18px;align-items:start;margin-top:28px; }
+.stack-icon-list .stack-column { min-width:0;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--surface); }
+.stack-icon-list .stack-column h3 { margin:0 0 12px;padding:0 0 11px;border-bottom:1px solid var(--line);color:var(--text);font:800 .9rem/1.3 "Manrope",sans-serif; }
+.stack-icon-list .stack-list { display:grid;gap:3px;margin:0;padding:0;list-style:none; }
+.stack-icon-list .stack-item { display:flex;align-items:center;gap:11px;min-height:37px;padding:6px 4px;border-radius:8px;color:var(--muted);font-size:.84rem;transition:background .18s ease,transform .18s ease; }
+.stack-icon-list .stack-item:hover { background:var(--soft);transform:translateX(2px); }
+.stack-icon-list .stack-item i { display:inline-flex;align-items:center;justify-content:center;width:21px;flex:0 0 21px;font-size:19px; }
+.stack-icon-list .stack-item .stack-fa-icon { color:var(--purple);font-size:16px; }
+body.theme-dark .stack-icon-list .stack-item i:not(.colored) { color:#e8e2ee; }
+@media(max-width:980px) { .stack-icon-list { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:760px) { .stack-icon-list { grid-template-columns:repeat(2,minmax(0,1fr));gap:10px; } .stack-icon-list .stack-column { padding:15px; } }
+@media(max-width:480px) { .stack-icon-list { grid-template-columns:1fr; } }
