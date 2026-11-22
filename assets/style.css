@@ -224,3 +224,20 @@
 .journey-content>p:last-child{margin:0;color:var(--muted);font-size:.86rem;line-height:1.65}
 @media(max-width:900px){.journey-list{grid-template-columns:1fr}.journey-item{min-height:0}}
 @media(max-width:600px){.journey-section{padding:46px 0}.journey-item{padding:19px 16px;border-radius:15px}.journey-content h3{font-size:1rem}.journey-content>p:last-child{font-size:.82rem}}
+
+
+/* Parcours — frise chronologique verticale */
+.journey-list{position:relative;display:grid;grid-template-columns:1fr;gap:0;max-width:850px;margin:34px auto 0;padding:0 0 0 54px}
+.journey-list::before{content:"";position:absolute;left:19px;top:17px;bottom:36px;width:1px;background:linear-gradient(to bottom,var(--purple),var(--line))}
+.journey-item{position:relative;display:grid;grid-template-columns:1fr;min-height:0;margin:0 0 22px;padding:23px 26px;border:1px solid var(--line);border-radius:17px;background:var(--surface);box-shadow:var(--shadow)}
+.journey-index{position:absolute;left:-54px;top:22px;display:grid;place-items:center;width:39px;height:39px;border:1px solid var(--purple);border-radius:50%;background:var(--bg);color:var(--purple);font:800 .7rem/1 var(--mono);z-index:1}
+.journey-label{margin-bottom:8px}
+.journey-content h3{font-size:1.12rem}
+.journey-content>p:last-child{max-width:680px}
+@media(max-width:600px){
+ .journey-list{margin-top:25px;padding-left:43px}
+ .journey-list::before{left:15px;top:15px;bottom:30px}
+ .journey-item{margin-bottom:17px;padding:19px 17px}
+ .journey-index{left:-43px;top:19px;width:32px;height:32px;font-size:.64rem}
+ .journey-content h3{font-size:1rem}
+}
