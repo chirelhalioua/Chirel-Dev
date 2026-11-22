@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chirelhalioua.fr/sitemap.xml
