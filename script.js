@@ -34,7 +34,7 @@
   const methodModalIndex = $("#methodModalIndex");
   const methodModalTitle = $("#methodModalTitle");
   const methodModalText = $("#methodModalText");
-  const methodCloseButtons = $("[data-method-close]");
+  const methodCloseButtons = $$("[data-method-close]");
   let lastMethodTrigger = null;
   const closeMethodModal = () => {
     if (!methodDetail) return;
