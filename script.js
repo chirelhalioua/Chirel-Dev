@@ -51,6 +51,34 @@
   }));
   $("#projectPrev")?.addEventListener("click", () => showSlide(current - 1));
   $("#projectNext")?.addEventListener("click", () => showSlide(current + 1));
+
+  // Navigation des projets par balayage horizontal sur écran tactile
+  const projectSwipeArea = $(".project-slides");
+  if (projectSwipeArea) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let trackingTouch = false;
+
+    projectSwipeArea.addEventListener("pointerdown", event => {
+      if (event.pointerType === "mouse" || event.target.closest("a, button")) return;
+      touchStartX = event.clientX;
+      touchStartY = event.clientY;
+      trackingTouch = true;
+    }, { passive: true });
+
+    projectSwipeArea.addEventListener("pointerup", event => {
+      if (!trackingTouch) return;
+      trackingTouch = false;
+      const deltaX = event.clientX - touchStartX;
+      const deltaY = event.clientY - touchStartY;
+      if (Math.abs(deltaX) < 45 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.25) return;
+      showSlide(current + (deltaX < 0 ? 1 : -1));
+    }, { passive: true });
+
+    projectSwipeArea.addEventListener("pointercancel", () => {
+      trackingTouch = false;
+    }, { passive: true });
+  }
   showSlide(0);
 
   $$("[data-card-flip]").forEach(button => button.addEventListener("click", () => $("#businessCard")?.classList.toggle("is-flipped")));
