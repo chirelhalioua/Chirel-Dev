@@ -3307,3 +3307,45 @@ body.theme-dark .stack-icon-list .stack-item i:not(.colored) { color:#e8e2ee; }
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+
+/* Carte recto-verso : flèche discrète et logo rond au verso */
+.business-card .business-front { position:absolute; }
+.business-card .business-back {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:rotateY(180deg);
+}
+.business-card .business-back > img {
+  display:block;
+  width:150px;
+  height:150px;
+  max-width:60%;
+  object-fit:contain;
+  margin:0 auto;
+}
+.business-card .card-flip-corner {
+  position:absolute;
+  right:18px;
+  bottom:16px;
+  display:grid;
+  place-items:center;
+  width:32px;
+  height:32px;
+  margin:0;
+  padding:0;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:var(--surface);
+  color:var(--purple);
+  font-size:.85rem;
+  cursor:pointer;
+  transition:transform .2s ease,background .2s ease;
+}
+.business-card .card-flip-corner:hover {
+  transform:rotate(45deg);
+  background:var(--soft);
+}
