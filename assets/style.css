@@ -391,6 +391,14 @@ body.theme-dark .method-orbit-line{border-color:color-mix(in srgb,var(--purple) 
 }
 
 
+/* Séparer visuellement la méthode et la section À propos */
+.about-v13{
+  background:var(--warm)!important;
+}
+body.theme-dark .about-v13{
+  background:var(--soft)!important;
+}
+
 /* Détails des étapes dans une fenêtre modale */
 .method-modal[hidden]{display:none!important}
 .method-modal{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:22px}
